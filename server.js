@@ -1,6 +1,6 @@
 const cluster = require("cluster");
 const os = require("os");
-const app = require("./app");
+const app = require("./src/app");
 
 const port = process.env.PORT || 3000;
 const numCPUs = os.cpus().length;

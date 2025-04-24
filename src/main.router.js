@@ -1,11 +1,11 @@
-const AppError = require("./src/utils/AppError");
-const sortObjectKeys = require("./src/utils/sortPayload");
+const AppError = require("./utils/AppError");
+const sortObjectKeys = require("./utils/sortPayload");
 const router = require("express").Router();
 
 // Define routes
 const routes = [
-    { path: "/api/auth", module: "./src/modules/auth/router" },
-    { path: "/api/users", module: "./src/modules/users/router" },
+    { path: "/api/auth", module: "./modules/auth/auth.router.js" },
+    { path: "/api/users", module: "./modules/user/user.router.js" },
 ];
 
 // Load and apply routes

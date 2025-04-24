@@ -1,5 +1,5 @@
 // auth/controller.js
-const authService = require("./service");
+const authService = require("./auth.service");
 const login = async (req, res, next) => {
     try {
         const result = await authService.login(req.body);

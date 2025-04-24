@@ -1,4 +1,4 @@
-const UserModel = require("./model");
+const UserModel = require("./user.model");
 const AppError = require("../../utils/AppError");
 const AppResponder = require("../../utils/AppResponder");
 const errorHandler = require("../../utils/errorHandler");

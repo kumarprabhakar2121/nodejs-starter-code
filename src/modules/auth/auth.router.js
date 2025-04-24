@@ -1,14 +1,14 @@
 // auth/router.js
 const express = require("express");
 const router = express.Router();
-const authController = require("./controller");
+const authController = require("./auth.controller");
 const {
     validateSignup,
     validateLogin,
     validateUserUpdate,
     validatePasswordChange,
-} = require("./validation.js");
-const { isAuthorized } = require("../../middleware/auth.js");
+} = require("./auth.validation.js");
+const { isAuthorized } = require("../../middleware/auth.middleware.js");
 
 router.route("/signup").post(validateSignup, authController.signup);
 router.route("/login").post(validateLogin, authController.login);
