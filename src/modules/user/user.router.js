@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("./user.controller");
-const { isAuthorized } = require("../../middleware/auth");
+const { isAuthorized } = require("../../middleware/auth.middleware.js");
 const { validateUserUpdate } = require("./user.validation");
 
 // All routes require authentication

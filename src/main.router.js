@@ -49,7 +49,7 @@ router.use((result, req, res, _next) => {
     }
 
     if (result instanceof AppError) {
-        if(result.statusCode === 500){
+        if (parseInt(result.statusCode / 100) === 5) {
             result.logErrorWithStackTrace();
         }
         response.error.message = result.message;

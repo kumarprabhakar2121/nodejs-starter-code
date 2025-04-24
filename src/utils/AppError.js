@@ -17,8 +17,9 @@ class AppError extends Error {
         this.error = options.error || {};
         this.error.message = `${message}`;
         // this.error.stackTrace = this.stack;
-        httpCodes[`${statusCode}`[0]] === 5 && (this.error.stackTrace = this.stack);
-
+        if (parseInt(statusCode / 100) === 5) {
+            this.error.stackTrace = this.stack;
+        }
     }
     /**
      * Log a detailed error with stack trace in a formatted single log entry
@@ -42,4 +43,3 @@ class AppError extends Error {
 }
 
 module.exports = AppError;
-
