@@ -96,7 +96,7 @@ function getCallerInfo() {
             "at format.printf",
             "logger.js",
             "winston",
-            "Printf.template",
+            "Printf.template"
         ];
 
         // Find the first stack line that's from application code
@@ -194,7 +194,7 @@ const logger = createLogger({
             format: fileFormat,
             zippedArchive: true,
         }),
-        consoleTransport,
+        consoleTransport
     ],
     // Don't exit on handled exceptions
     exitOnError: false,
@@ -207,7 +207,7 @@ const logger = createLogger({
             format: fileFormat,
             zippedArchive: true,
         }),
-        consoleTransport,
+        consoleTransport
     ],
 });
 

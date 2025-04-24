@@ -20,7 +20,7 @@ const validateUserUpdate = [
             return validationFailed(errors);
         }
         next();
-    },
+    }
 ];
 
 const validatePasswordChange = [
@@ -35,7 +35,7 @@ const validatePasswordChange = [
             return res.status(400).json({ errors: errors.array() });
         }
         next();
-    },
+    }
 ];
 
 const validateUserCreation = [
@@ -55,7 +55,7 @@ const validateUserCreation = [
             return validationFailed(errors);
         }
         next();
-    },
+    }
 ];
 const validateUserDeletion = [
     param("userId")
@@ -69,7 +69,7 @@ const validateUserDeletion = [
             return validationFailed(errors);
         }
         next();
-    },
+    }
 ];
 const validateUserId = [
     param("userId")
@@ -83,7 +83,7 @@ const validateUserId = [
             return validationFailed(errors);
         }
         next();
-    },
+    }
 ];
 
 const validateUserFilters = [
@@ -105,7 +105,7 @@ const validateUserFilters = [
             return validationFailed(errors);
         }
         next();
-    },
+    }
 ];
 
 

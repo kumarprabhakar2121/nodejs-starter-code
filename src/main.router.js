@@ -5,7 +5,7 @@ const router = require("express").Router();
 // Define routes
 const routes = [
     { path: "/api/auth", module: "./modules/auth/auth.router.js" },
-    { path: "/api/users", module: "./modules/user/user.router.js" },
+    { path: "/api/users", module: "./modules/user/user.router.js" }
 ];
 
 // Load and apply routes
@@ -18,11 +18,11 @@ routes.forEach(({ path, module }) => {
     }
 });
 
-router.use((_req, _res) => {
-    throw new AppError(`METHOD: '${_req.method}' with URL: '${_req.originalUrl}' not exists `, 404, {
-        error: "Route not found",
-        meta: {},
-    });
+router.use((_req, _res, next) => {
+    console.log("fsfgv");
+    next(
+        new AppError("ROUTE_NOT_EXISTS", 404)
+    );
 });
 
 router.use((result, req, res, _next) => {
@@ -39,7 +39,7 @@ router.use((result, req, res, _next) => {
         data: result.data,
     };
 
-    if(result?.cookie){
+    if (result?.cookie) {
         const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000; // 3 days in milliseconds
         res.cookie(result.cookie.cookieKey, result.cookie.cookieValue, {
             httpOnly: true,

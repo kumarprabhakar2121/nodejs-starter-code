@@ -36,7 +36,7 @@ class AppError extends Error {
                 "🧵 Stack Trace :",
                 `  ${this.stack?.replace(/\n/g, "\n  ")}`, // Indent stack trace lines
                 "=========== 🔚 ERROR LOG END 🔚 ===========",
-                "",
+                ""
             ].join("\n")
         );
     }

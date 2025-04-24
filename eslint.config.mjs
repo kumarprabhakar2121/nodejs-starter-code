@@ -30,19 +30,19 @@ export default defineConfig([
             "comma-dangle": [
                 "error",
                 {
-                    arrays: "always-multiline",
+                    arrays: "never",
                     objects: "always-multiline",
                     imports: "never",
                     exports: "never",
                     functions: "never",
-                },
+                }
             ],
             "no-unused-vars": [
                 "warn",
                 {
                     argsIgnorePattern: "^_",
                     varsIgnorePattern: "^_",
-                },
+                }
             ],
         },
     },
@@ -52,5 +52,5 @@ export default defineConfig([
         rules: {
             "no-unused-vars": "off", // Turn off the rule completely for this file
         },
-    },
+    }
 ]);

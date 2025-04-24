@@ -75,7 +75,7 @@ const getAllUsers = async (filters = {}) => {
             ? {
                 $or: [
                     { email: { $regex: searchText, $options: "i" } },
-                    { name: { $regex: searchText, $options: "i" } },
+                    { name: { $regex: searchText, $options: "i" } }
                 ],
             }
             : {};
